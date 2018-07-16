@@ -1,0 +1,103 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+@font-face {
+    font-family: 'newFont';
+    src: url('../font/SingleMalta.ttf');
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#fff, #333);
+    font-family: 'newFont'
+}
+
+.list {
+    position: absolute;
+    left: 50%;
+    margin-left: -150px;
+    margin-top: 50px;
+    width: 300px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    background-color: #333;
+}
+
+.list p {
+    position: relative;
+    color: #00BFFF;
+    cursor: pointer;
+}
+
+.list>li .title-outer {
+    font-size: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.list>li:last-of-type .title-outer {
+    border-bottom: none;
+}
+
+.list .icon {
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    height: 100%;
+    transition: all 0.2s linear;
+}
+
+.list .icon::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    content: '+';
+}
+
+.list .sub-menu1,
+.list .sub-menu2 {
+    display: none;
+}
+
+.list .sub-menu1>li>p {
+    padding: 15px 15px 15px 30px;
+    font-size: 18px;
+    background-color: #666;
+    border-bottom: 1px solid #fff;
+}
+
+.list .sub-menu1>li:last-of-type>p {
+    border-bottom: none;
+}
+
+.list .sub-menu2>li>p {
+    padding: 10px 10px 10px 40px;
+    font-size: 16px;
+    background-color: #999;
+    border-bottom: 1px solid #fff;
+}
+
+.list .sub-menu2>li:last-of-type>p {
+    border-bottom: none;
+}
+
+
+/* 动态类 */
+
+.list .active>p {
+    color: #FFA500;
+}
+
+.list .active>p .icon {
+    transform: rotate(180deg);
+}
+
+.list .active>p .icon::after {
+    content: '-'
+}
